@@ -1,4 +1,4 @@
-/* vector.h - A simple vector implementation in C
+/* vector.c - A simple vector implementation in C
  * 
  * Copyright (c) 2025 FourteenLinesOfCode
  * 

@@ -14,9 +14,9 @@
 typedef struct
 {
     int* data;
-    int decrease;    //ob es automatich verkleinert wird
-    size_t size;     //wie viel wir benutz haben
-    size_t capacity; //wie viel platz wir haben
+    int decrease;    // if it gets automatically decreased
+    size_t size;     // how much spaced we used
+    size_t capacity; // how much capacity we have
 }Vector;
 
 void vector_init(Vector *v, int initial_capacity, int auto_decrease);
