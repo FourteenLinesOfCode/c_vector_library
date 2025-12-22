@@ -34,9 +34,10 @@ int vector_size(Vector *v);
 int vector_capacity(Vector *v);
 int vector_is_empty(Vector *v);
 void vector_swap(Vector *v, size_t index1, size_t index2);
-//need to be done
 void vector_insert(Vector *v, size_t index, int value);
 void vector_remove(Vector *v, size_t index);
+int cmp_ints(const void *a, const void *b);
 void vector_sort(Vector *v);
-void vector_reverse(Vector *v);
-void vector_print(Vector *v);
+// need to be implemented
+// void vector_reverse(Vector *v);
+// void vector_print(Vector *v);

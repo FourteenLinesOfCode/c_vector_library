@@ -40,7 +40,13 @@ int main(){
 
     int is_empty = vector_is_empty(test); // returns if the vector is empty
 
-    vector_swap(test,0,1); //swaps the values of the given indexes
+    vector_swap(test,0,1); // swaps the values of the given indexes
+
+    vector_insert(test,1, 33); // inserts a value at the index given to it   vector_insert(Vector *v,size_t index,int value)
+
+    vector_remove(test,1); // removes a value at the given index   void vector_remove(Vector *v, size_t index);
+
+    vector_sort(test); // sorts the vector from the smallest at index 0 to the biggest at the last index   void vector_sort(Vector *v);
 
     return 0;
 }
