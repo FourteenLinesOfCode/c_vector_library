@@ -10,7 +10,7 @@
 
 If you discover a security vulnerability in the Vector library, please follow these steps:
 
-1. **Open a Private Issue on GitHub**: If you find a security issue, please open a **GitHub issue** in the [project repository](https://github.com/FourteenLinesOfCode/c_vector_library). In the issue, explain the vulnerability in as much detail as possible.
+1. **Open an Issue on GitHub**: If you find a security issue, please open a **GitHub issue** in the [project repository](https://github.com/FourteenLinesOfCode/c_vector_library). In the issue, explain the vulnerability in as much detail as possible.
 
 2. **What Happens Next**: 
    - I will review your report as soon as possible. Due to my limited availability, please be patient—I will try to respond within a few days.
