@@ -1,18 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "vector.h"
+#include "../src/vector.h"
 
 int main(){
-    Vector *test = (Vector *)malloc(sizeof(Vector)); // how to create a Vector variable
+    Vector *test1 = (Vector *)malloc(sizeof(Vector)); // how to create a Vector variable
 
-    vector_init(test,10,1); // how to initialize a Vector vector_init(Vector *variable,int capacity,int auto_decrease(put 1 if the vector should automatically be halfed))
+    vector_init(test1,10,1); // how to initialize a Vector vector_init(Vector *variable,int capacity,int auto_decrease(put 1 if the vector should automatically be halfed if possible))
 
-    vector_push(test,55); // this is how you add an value to the vactor
-    vector_push(test,7);  
+    vector_push(test1,55); // this is how you add an value to the vector at the end
+    vector_push(test1,7);  
 
-    int variable = vector_pop(test); // this is how you pop the you can put it in a variable
+    int variable = vector_pop(test1); // this is how you pop you can put it in a variable 
 
-    vector_free(test); // this is how you delete and free the vector
+    vector_free(test1); // this is how you delete and free the vector
 
     Vector *test = (Vector *)malloc(sizeof(Vector));
     vector_init(test,10,1);
@@ -47,6 +47,16 @@ int main(){
     vector_remove(test,1); // removes a value at the given index   void vector_remove(Vector *v, size_t index);
 
     vector_sort(test); // sorts the vector from the smallest at index 0 to the biggest at the last index   void vector_sort(Vector *v);
+
+    vector_print(test); // prints the entire vector out
+
+    int value = vector_back(test); // gets the last element of the vector can be stored in and variable
+
+    int value1 = vector_front(test); // gets the first element of the vector can also be stored in a variable
+
+    vector_shrink_to_fit(test); // shrinks the vector to fit perfectly to the size meaning if the capacity is 10 and you use 5 of that that after that the capacity is 5
+
+    vector_free(test); // don't forget to free
 
     return 0;
 }
