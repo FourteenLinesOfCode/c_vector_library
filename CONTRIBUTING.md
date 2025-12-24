@@ -15,7 +15,7 @@ i am excited that you want to contribute to the vector library. Read all of the 
 
 ## 3. Commit Guidelines
 ### Commit message:
-  - Be precise and clear.
+  - Be clear and precise.
   - Start the commit message with a short summary and then explain what you added and what it does.
 
 ### Commit once per fix:
@@ -25,11 +25,14 @@ i am excited that you want to contribute to the vector library. Read all of the 
   - Commit features after you added 1 to 3 features so it doesn't get messy.
 
 ## 4. Issues and Bug Reporting
-### Provide clear Information:
-  - If you are reporting a bug please look inside SECURITY.md
+### Reporting a Bug:
+  - If you are reporting a bug open an issue. Be clear and precise, give us steps to recreate the bug and write what you expected to happen.
 
 ### Feature Request:
-  - When submitting a feature request, descripte the feature in detail and how it improves the library.
+  - When submitting a feature request, descripte the feature in detail and how it would improve the library.
+
+### Security vulnerability:
+  - If you want to report a security vulnerability please read SECURITY.md for information.
 
 ## 5. Testing Guidlines
 - Test thoroughly. Check that the added features work as expected using tests or a programm using the features, also test for edge cases and possible failures.

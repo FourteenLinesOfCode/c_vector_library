@@ -21,14 +21,17 @@ typedef struct
 
 // Initialization
 
-void vector_init(Vector *v, int initial_capacity, int auto_decrease);  // Set up a new vector if auto_decrease is 0 it won't automatically decrease if it is 1 it will decrease if v->size is less than v->capacity / 2
+/* Set up a new vector if auto_decrease is 0 it won't automatically decrease
+* if it is 1 it will decrease if v->size is less than v->capacity / 2
+*/
+void vector_init(Vector *v, int initial_capacity, int auto_decrease);
 void vector_clear(Vector *v);  // Clear vector contents (size -> 0) but keep capacity
 
 
 // Memory Management
 
 void vector_free(Vector *v);  // Free all allocated memory
-void vector_decrease_half(Vector *v);  // Shrink capacity to half (used for auto-decrease)
+void vector_decrease_half(Vector *v);  // Shrink capacity to half
 void vector_resize(Vector *v, size_t space); // Resize the underlying storage to a specific size
 void vector_shrink_to_fit(Vector *v);  // Shrink capacity to match current size
 
@@ -63,6 +66,7 @@ int vector_find(Vector *v, int value);  // Find the index of a value (first occu
 int cmp_ints(const void *a, const void *b);  // Compare two integers (helper for sorting)
 void vector_sort(Vector *v);  // Sort the vector in ascending order
 void vector_print(Vector *v);  // Prints the entire vector
+void vector_version(); // Prints the version of the vector library
 
 
 // needs to be implemented

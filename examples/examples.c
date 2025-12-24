@@ -3,6 +3,8 @@
 #include "../src/vector.h"
 
 int main(){
+
+    //this only gives you examples of how to use the vector library
     Vector *test1 = (Vector *)malloc(sizeof(Vector)); // how to create a Vector variable
 
     vector_init(test1,10,1); // how to initialize a Vector vector_init(Vector *variable,int capacity,int auto_decrease(put 1 if the vector should automatically be halfed if possible))

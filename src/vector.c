@@ -40,7 +40,7 @@ void vector_free(Vector *v){
 }
 
 void vector_decrease_half(Vector *v){
-    if(v->size > v->capacity / 2){
+    if(v->size > v->capacity / 4){
         fprintf(stderr,"ERROR: the vector cannot be halved due that there are more elements than half of the capacity with vector_decrease_half\n");
         return;
     }
@@ -86,6 +86,10 @@ int vector_get(Vector *v, size_t index) {
         fprintf(stderr, "ERROR: Index out of bounds: %zu\n", index);
         return -1;
     }
+    if(v->size == 0){
+        fprintf(stderr, "ERROR: the vector is empty\n");
+        return -1;
+    }
     return v->data[index];
 }
 
@@ -94,14 +98,26 @@ void vector_set(Vector *v, size_t index, int value) {
         fprintf(stderr, "ERROR: Index out of bounds in vector_set: %zu\n", index);
         return;
     }
+    if(v->size == 0){
+        fprintf(stderr, "ERROR: the vector is empty\n");
+        return -1;
+    }
     v->data[index] = value;
 }
 
 int vector_front(Vector *v){
+    if(v->size == 0){
+        fprintf(stderr, "ERROR: the vector is empty\n");
+        return -1;
+    }
     return v->data[0];
 }
 
 int vector_back(Vector *v){
+    if(v->size == 0){
+        fprintf(stderr, "ERROR: the vector is empty\n");
+        return -1;
+    }
     return v->data[v->size - 1];
 }
 
@@ -118,14 +134,11 @@ void vector_push(Vector *v, int value){
         v->data = new_data;
     }
     v->data[v->size++] = value;
-    if (v->decrease == 1){
-        vector_decrease_half(v);
-    }
 }
 
 int vector_pop(Vector *v){
     if(v->size == 0){
-        return 0;
+        return -1;
     }
     int value = v->data[v->size - 1];
     v->size--;
@@ -145,9 +158,6 @@ void vector_insert(Vector *v, size_t index, int value){
     }
     for(size_t i = v->size; i > index; i--){
         v->data[i] = v->data[i - 1];
-    }
-    if (v->decrease == 1){
-        vector_decrease_half(v);
     }
     v->data[index] = value;
     v->size++;
@@ -229,4 +239,8 @@ void vector_print(Vector *v) {
         printf("%d ", v->data[i]);
     }
     printf("\n");
+}
+
+void vector_version() {
+    printf("Vector Library Version 0.1.0-beta\n");
 }
