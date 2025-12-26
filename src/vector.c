@@ -21,7 +21,7 @@ void vector_init(Vector *v, int initial_capacity, int auto_decrease){
     v->capacity = initial_capacity;
     v->data = (int *)malloc(v->capacity * sizeof(int));
     if (v->data == NULL) {
-        fprintf(stderr, "ERROR: Memory allocation failed in vector_init!\n");
+        perror("ERROR: Memory allocation failed in vector_init!\n");
         exit(1);
     }
 }
@@ -47,7 +47,7 @@ void vector_decrease_half(Vector *v){
     v->capacity /= 2;
     int *new_data = (int *)realloc(v->data, v->capacity * sizeof(int));
     if (new_data == NULL) {
-        fprintf(stderr, "ERROR: Memory reallocation failed for vector_decrease_half!\n");
+        perror("ERROR: Memory reallocation failed for vector_decrease_half!\n");
         exit(1);
     }
     v->data = new_data;
@@ -60,7 +60,7 @@ void vector_resize(Vector *v, size_t space){
     }
     int *new_data = (int *)realloc(v->data, space * sizeof(int));
     if (new_data == NULL) {
-        fprintf(stderr, "ERROR: Memory reallocation failed for vector_resize!\n");
+        perror("ERROR: Memory reallocation failed for vector_resize!\n");
         exit(1);
     }
     v->data = new_data;
@@ -72,7 +72,7 @@ void vector_shrink_to_fit(Vector *v){
 
     int *new_data = (int *)realloc(v->data, v->size * sizeof(int));
     if (new_data == NULL) {
-        fprintf(stderr, "ERROR: Memory reallocation failed for vector_resize!\n");
+        perror("ERROR: Memory reallocation failed for vector_resize!\n");
         exit(1);
     }
     v->data = new_data;
@@ -100,7 +100,7 @@ void vector_set(Vector *v, size_t index, int value) {
     }
     if(v->size == 0){
         fprintf(stderr, "ERROR: the vector is empty\n");
-        return -1;
+        return;
     }
     v->data[index] = value;
 }
@@ -128,7 +128,7 @@ void vector_push(Vector *v, int value){
         v->capacity *= 2;
         int *new_data = (int *)realloc(v->data, v->capacity * sizeof(int));
         if (new_data == NULL) {
-            fprintf(stderr, "ERROR: Memory reallocation failed for vector_push!\n");
+            perror("ERROR: Memory reallocation failed for vector_push!\n");
             exit(1);
         }
         v->data = new_data;
@@ -181,6 +181,10 @@ void vector_swap(Vector *v, size_t index1, size_t index2){
     int temp = v->data[index1];
     v->data[index1] = v->data[index2];
     v->data[index2] = temp;
+}
+
+void vector_push_front(Vector *v, int value){
+    vector_insert(v,0,value);
 }
 
 

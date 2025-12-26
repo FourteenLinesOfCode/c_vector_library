@@ -50,6 +50,7 @@ int vector_pop(Vector *v);  // Remove element from the end
 void vector_insert(Vector *v, size_t index, int value);  // Insert element at specific index
 void vector_remove(Vector *v, size_t index);  // Remove element at specific index
 void vector_swap(Vector *v, size_t index1, size_t index2);  // Swap two elements
+void vector_push_front(Vector *v, int value);          // Add element to the start
 
 
 // Query Functions
