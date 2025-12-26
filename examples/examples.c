@@ -1,3 +1,11 @@
+/* vector.h - A simple vector implementation in C
+ * 
+ * Copyright (c) 2025 FourteenLinesOfCode
+ * 
+ * This software is licensed under the MIT License.
+ * See the LICENSE file for details.
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "../src/vector.h"

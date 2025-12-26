@@ -24,6 +24,10 @@ i am excited that you want to contribute to the vector library. Read all of the 
 - Commit every 1 to 3 added features:
   - Commit features after you added 1 to 3 features so it doesn't get messy.
 
+## Pull requests (PRs)
+- Fork the repository first.
+- Use a [feature branch][git-feature-branch] instead of the main branch.
+
 ## 4. Issues and Bug Reporting
 ### Reporting a Bug:
   - If you are reporting a bug open an issue. Be clear and precise, give us steps to recreate the bug and write what you expected to happen.
